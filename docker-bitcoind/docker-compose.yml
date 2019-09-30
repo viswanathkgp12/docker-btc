@@ -1,0 +1,11 @@
+version: "3"
+services:
+  bitcoind:
+    build: .
+    ports:
+      - "0.0.0.0:8332:8332"
+      - "0.0.0.0:8333:8333"
+      - "0.0.0.0:28332:28332"
+    volumes:
+      - "./bitcoin:/bitcoin"
+    restart: always

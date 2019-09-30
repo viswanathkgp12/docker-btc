@@ -1,0 +1,30 @@
+{
+    "bitcoreNode": {
+        "services": {
+            "api": {
+              "wallets": {
+                "allowCreationBeforeCompleteSync": true
+              }
+            }
+          },
+      "chains": {
+        "BTC": {
+          "testnet": {
+            "chainSource": "p2p",
+            "trustedPeers": [
+              {
+                "host": "127.0.0.1",
+                "port": 8333
+              }
+            ],
+            "rpc": {
+              "host": "127.0.0.1",
+              "port": 8332,
+              "username": "bitcoin",
+              "password": "password123"
+            }
+          }
+        }
+      }
+    }
+  }
