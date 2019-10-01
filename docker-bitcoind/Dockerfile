@@ -16,18 +16,20 @@ RUN add-apt-repository ppa:bitcoin/bitcoin \
 RUN apt-get install -y bitcoind
 
 # Create data directory and add config.
-RUN mkdir -p /bitcoin
+RUN mkdir -p /bitcoin /bitcoin/data /bitcoin/config
 # Link so that bitcoin-cli works properly with config file
-RUN ln -sfn /bitcoin /.bitcoin
-COPY bitcoind.conf /bitcoin
+RUN ln -sfn /bitcoin/config /.bitcoin
 
 WORKDIR /bitcoin
 
-VOLUME /bitcoin
+COPY /bitcoin /bitcoin
+
+VOLUME /bitcoin/config
+VOLUME /bitcoin/data
 
 # 8332  - RPC Port
 # 8333  - P2P Server Port
 # 28332 - ZeroMQ Port
 EXPOSE 8332 8333 28332
 
-CMD ["bitcoind", "-conf=/bitcoin/bitcoind.conf", "-datadir=/bitcoin"]
+CMD ["bitcoind", "-conf=/bitcoin/config/bitcoin.conf", "-datadir=/bitcoin/data", "-disablewallet"]

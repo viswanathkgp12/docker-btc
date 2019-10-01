@@ -7,5 +7,6 @@ services:
       - "0.0.0.0:8333:8333"
       - "0.0.0.0:28332:28332"
     volumes:
-      - "./bitcoin:/bitcoin"
+      - "./bitcoin/config:/bitcoin/config"
+      - "./bitcoin/data:/bitcoin/data"
     restart: always
