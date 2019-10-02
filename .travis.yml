@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker 
+
+script:
+  - cd docker-bitcoind && docker-compose build
+  - docker-compose up -d
+  - cd ../docker-bitcore-node && docker-compose build
+  - docker-compose up -d
