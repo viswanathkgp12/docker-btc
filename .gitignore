@@ -1,2 +1,4 @@
 .DS_Store
 **/node_modules/
+docker-bitcore-node/mongo_data/
+docker-bitcoind/bitcoin/data

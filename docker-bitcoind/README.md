@@ -58,3 +58,6 @@ Output will be similar to the one shown below:
     ]
 ```
 Initially blockchain node downloads ```headers``` alone. So the chaintip will be at 0, but the ```headers-only``` field should increment. Later on, the chaintip will also change from ```height``` 0
+```
+    curl --user bitcoin:password123 --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getchaintips", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/
+```
