@@ -13,4 +13,6 @@ Bitcoin Core docker implementation
  - Start the docker container using ```docker-compose up -d```
 
 # Note
-Insight will not work until the Bitcoind node is fully synced
+ - Insight will not work until the Bitcoind node is fully synced
+ - v8.2.0 of Bitcore has a bug and hence cannot be used; Therefore use either v8.1.0 or the master.
+ - Master commit id when the setup was last verified ```324944c```
